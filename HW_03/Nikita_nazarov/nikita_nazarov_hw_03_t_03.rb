@@ -16,11 +16,11 @@ end
 
 def time(arr)
   firstevent = DateTime.strptime(
-    arr[1].insert(-1, '0'),
+    arr.last,
     '%Y-%m-%d %H:%M:%S.%L'
   ).strftime('%Q').to_i
   secondevent = DateTime.strptime(
-    arr[0].insert(-1, '0'),
+    arr.first,
     '%Y-%m-%d %H:%M:%S.%L'
   ).strftime('%Q').to_i
   ((firstevent - secondevent) / 1000.0).round(1)
