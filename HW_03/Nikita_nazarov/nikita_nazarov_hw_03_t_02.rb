@@ -1,24 +1,24 @@
 def task_2(str)
   res = []
   str.each_line do |s|
-    d = s[/[\[].*[\]]/]
-    send = s[/^.* - -/]
-    to = s[/T .* H/]
-    if d && send && to
-      res << modifyd(d) + ' FROM: ' + send[0..-4] + 'TO:' + modifydes(to)
+    date = s[/[\[].*[\]]/]
+    sender = s[/^.* - -/]
+    way = s[/T .* H/]
+    if date && sender && way
+      res << modifydate(date) + ' FROM: ' + modifysender(sender) + ' TO:' + modifyway(way)
     end
   end
   res
 end
 
-def modifyd(dat)
+def modifydate(dat)
   dat.delete_prefix!('[').delete_suffix!(']')
 end
 
-def modifydes(des)
+def modifyway(des)
   des.delete_prefix!('T').delete_suffix!(' H').upcase
 end
 
-def modifysend(sen)
+def modifysender(sen)
   sen.delete_suffix!(' - -')
 end
