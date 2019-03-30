@@ -1,14 +1,14 @@
 def task_2(str)
-  result = []
+  res = []
   str.each_line do |s|
     d = s[/[\[].*[\]]/]
-    sender = s[/^[1234567890].* - -/]
+    send = s[/^.* - -/]
     to = s[/T .* H/]
-    if d && sender && to
-      result << modifyd(d) + ' FROM: ' + sender[0..-4] + ' TO: ' + modifydes(to)
+    if d && send && to
+      res << modifyd(d) + ' FROM: ' + send[0..-4] + 'TO:' + modifydes(to)
     end
   end
-  result
+  res
 end
 
 def modifyd(dat)
@@ -16,5 +16,5 @@ def modifyd(dat)
 end
 
 def modifydes(des)
-  des.delete_prefix!('T').delete_suffix!('H').upcase
+  des.delete_prefix!('T').delete_suffix!(' H').upcase
 end
