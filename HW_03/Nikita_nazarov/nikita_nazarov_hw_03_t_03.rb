@@ -11,7 +11,7 @@ def task_3(str)
     actions << x[/^.* u/].delete_suffix!('u')
     result = time(actions) if count == 2
   end
-  puts result.to_s
+   result.to_s
 end
 
 def time(arr)
