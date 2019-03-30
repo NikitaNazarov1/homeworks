@@ -1,6 +1,8 @@
 def task_1(str)
-  str.each_line(&:chomp)
+  result = ''
+  # str.each_line(&:chomp)
   str.each_line do |s|
-    s =~ /error/i ? puts(s) : puts("")
+    s =~ /error/i ? result = s : result
   end
+  result
 end
