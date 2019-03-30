@@ -18,3 +18,7 @@ end
 def modifydes(des)
   des.delete_prefix!('T').delete_suffix!(' H').upcase
 end
+
+def modifysend(sen)
+  sen.delete_suffix!(' - -')
+end
