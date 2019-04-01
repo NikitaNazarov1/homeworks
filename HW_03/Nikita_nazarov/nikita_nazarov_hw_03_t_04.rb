@@ -1,5 +1,4 @@
 def task_4(str)
-  result = 0
-  str.each_char { |ch| result += ch.to_i }
+  result = str.each_char.inject(0) { |sum, number| sum += number.to_i }
   result
 end
