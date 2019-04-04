@@ -1,20 +1,33 @@
 require 'yaml'
-def res(nam, datb, user, pas, mag)
-  { nam => { db: datb, user: user, password: pas, magic_number: mag }.delete_if { |_key, value| value.nil? } }
+
+def magic_number(pool, timeout)
+  pool = 1 if pool.nil?
+  timeout = 1000 if timeout.nil?
+  pool * timeout
 end
 
-def parse(con, key)
-  k = con.key(con[key])
-  dbs = con[key]['database']
-  use = con[key]['username']
-  pass = con[key]['password']
-  m = con[key]['pool'].to_i * con[key]['timeout'].to_i
-  res(k, dbs, use, pass, m)
+def parse(hash)
+  hash = hash.map { |key, value| [key.to_sym, value] }.to_h
+  hash2 = {}
+  hash2[:db] = hash[:database]
+  hash2[:user] = hash[:username]
+  hash2[:password] = hash[:password]
+  hash2[:magic_number] = magic_number(hash[:pool], hash[:timeout])
+  hash2.delete_if { |_key, value| value.nil? }
+end
+
+def main_hash(hash)
+  hash.map { |key, value| [key.to_sym, parse(value)] }.to_h
 end
 
 def task_4_2(input)
-  config = YAML.safe_load(input)
-  config.each_key do |key|
-    parse(config, key)
+  array = []
+  array << YAML.safe_load(input)
+  arr = []
+  array[0].each do |key, value|
+    hash = {}
+    hash[key] = value
+    arr << hash
   end
+  arr.map { |h| main_hash(h) }
 end
