@@ -1,3 +1,4 @@
+# task 2
 require 'yaml'
 
 def magic_number(pool, timeout)
