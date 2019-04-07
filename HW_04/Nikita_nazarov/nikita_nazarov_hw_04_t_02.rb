@@ -22,6 +22,8 @@ def main_hash(hash)
 end
 
 def task_4_2(input)
+  return {} if input.empty?
+
   array = []
   array << YAML.safe_load(input)
   arr = []
