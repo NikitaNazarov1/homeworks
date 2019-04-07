@@ -11,7 +11,7 @@ def changeip(sen)
 end
 
 def task_2(str)
-  str.each_line.map do |s|
+  arr = str.each_line.map do |s|
     d = s[/[\[].*[\]]/]
     ip = s[/^.* - -/]
     way = s[/T .* H/]
@@ -19,4 +19,5 @@ def task_2(str)
       changedate(d) + ' FROM: ' + changeip(ip) + ' TO:' + changeway(way)
     end
   end
+  arr.compact
 end
