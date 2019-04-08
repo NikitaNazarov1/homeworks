@@ -1,15 +1,15 @@
 require 'date'
 
 def task_3(str)
+  count_of_actions = 2
   result = 0
   count = 0
-  actions = []
-  str.each_line do |x|
-    next unless x.include?('Calling core with action:') == true
+  actions = str.each_line.map do |line|
+    next unless line.include?('Calling core with action:')
 
     count += 1
-    actions << x[/^.* u/].delete_suffix!('u')
-    result = time(actions) if count == 2
+    line[/^.* u/].delete_suffix!('u')
+    result = time(actions) if count == count_of_actions
   end
   result.to_s
 end
