@@ -1,9 +1,9 @@
 require_relative 'homework'
 # class mentor
 class Mentor < Human
-  attr_accessor :notifications, :subscribes
+  attr_accessor :notification, :subscribes
   def initialize(_fullname)
-    @notifications = []
+    @notification = []
     @subscribes = []
     super
   end
@@ -14,7 +14,7 @@ class Mentor < Human
   end
 
   def notifications
-    notifications.each do |v|
+    notification.each do |v|
       return 'not subscribe' unless @subscribes.to_s.include?(v.student)
 
       puts "notice:<#{v.status}> from student: #{v.student} sent: #{v.pull_r}"
@@ -30,6 +30,6 @@ class Mentor < Human
   end
 
   def read_notifications!
-    notifications.map { |val| val.status = 'read' }
+    notification.map { |val| val.status = 'read' }
   end
 end

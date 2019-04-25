@@ -34,7 +34,7 @@ class Student < Human
 
   def send_notification(homework)
     subscribers.each do |mentor|
-      mentor.notifications << Notification.new(
+      mentor.notification << Notification.new(
         status: 'unread',
         student: homework.student,
         pull_r: homework.pull_r
