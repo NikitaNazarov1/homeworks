@@ -20,11 +20,6 @@ class Student < Human
     homeworks[@fullname] = homework
   end
 
-  # def add_hw(homework)
-  #   @counter += 1
-  #   homeworks[@counter] = homework
-  # end
-
   def make_hw
     puts "#{@fullname}, please, enter your source code: "
     homework = gets.chomp
