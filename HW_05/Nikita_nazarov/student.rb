@@ -4,13 +4,12 @@ require_relative 'homework'
 require_relative 'notification'
 # class Student
 class Student < Human
-  attr_reader :homeworks, :counter, :subscribers
+  attr_reader :homeworks, :subscribers
 
   def initialize(fullname)
     @fullname = fullname
     @homeworks = {}
     @subscribers = []
-    @counter = 0
   end
 
   def subscriber(mentor)
@@ -18,9 +17,13 @@ class Student < Human
   end
 
   def add_hw(homework)
-    @counter += 1
-    homeworks[@counter] = homework
+    homeworks[@fullname] = homework
   end
+
+  # def add_hw(homework)
+  #   @counter += 1
+  #   homeworks[@counter] = homework
+  # end
 
   def make_hw
     puts "#{@fullname}, please, enter your source code: "
