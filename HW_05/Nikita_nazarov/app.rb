@@ -12,6 +12,7 @@ mentor1 = Mentor.new('Alexandr Shagov')
 mentor2 = Mentor.new('Maksim Holubev')
 # Alex subscribe to Nikita
 mentor1.subscribe_to_student(student1)
+mentor1.subscribe_to_student(student1)
 mentor1.subscribe_to_student(student2)
 # Nikita make homework
 homework = student1.make_hw
