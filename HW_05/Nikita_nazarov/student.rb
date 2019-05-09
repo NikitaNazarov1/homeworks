@@ -2,7 +2,6 @@ require 'json'
 require 'net/http'
 require_relative 'homework'
 require_relative 'notification'
-require_relative 'human'
 # class Student
 class Student < Human
   attr_reader :homeworks, :subscribers

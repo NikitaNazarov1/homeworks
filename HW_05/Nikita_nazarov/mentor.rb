@@ -1,5 +1,4 @@
 require_relative 'homework'
-require_relative 'human'
 # class mentor
 class Mentor < Human
   attr_accessor :notification, :subscribes
