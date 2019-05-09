@@ -1,5 +1,5 @@
 require_relative 'spec_helper'
-require_relative '../../HW_05/Nikita_nazarov/homework'
+require_relative '../../HW_05/Nikita_Nazarov/homework'
 
 RSpec.describe Homework do
   subject { Homework.new(code: code, student: student, pull_r: pull_r) }

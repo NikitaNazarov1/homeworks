@@ -1,5 +1,5 @@
 require_relative 'spec_helper'
-require_relative '../../HW_05/Nikita_nazarov/human'
+require_relative '../../HW_05/Nikita_Nazarov/human'
 
 RSpec.describe Human do
   subject { Human.new(fullname) }

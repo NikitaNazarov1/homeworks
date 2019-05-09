@@ -50,5 +50,7 @@ class Student < Human
     send_notification(homework)
     url = URI('https://www.example.com')
     Net::HTTP.post(url, hash.to_json)
+    puts result = 'Successful submit'
+    result
   end
 end

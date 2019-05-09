@@ -1,9 +1,9 @@
 # rubocop:disable all
 require_relative 'spec_helper'
-require_relative '../../HW_05/Nikita_nazarov/mentor'
-require_relative '../../HW_05/Nikita_nazarov/human'
-require_relative '../../HW_05/Nikita_nazarov/student'
-require_relative '../../HW_05/Nikita_nazarov/homework'
+require_relative '../../HW_05/Nikita_Nazarov/mentor'
+require_relative '../../HW_05/Nikita_Nazarov/human'
+require_relative '../../HW_05/Nikita_Nazarov/student'
+require_relative '../../HW_05/Nikita_Nazarov/homework'
 
 RSpec.describe Mentor do
   subject { Mentor.new(_fullname) }

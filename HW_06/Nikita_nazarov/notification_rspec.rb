@@ -1,5 +1,5 @@
 require_relative 'spec_helper'
-require_relative '../../HW_05/Nikita_nazarov/notification'
+require_relative '../../HW_05/Nikita_Nazarov/notification'
 
 RSpec.describe Notification do
   subject { Notification.new(status: status, student: student, pull_r: pull_r) }
