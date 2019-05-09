@@ -1,3 +1,4 @@
+# rubocop:disable all
 require_relative 'homework'
 require_relative 'human'
 # class mentor
@@ -47,3 +48,4 @@ class Mentor < Human
     end
   end
 end
+# rubocop:enable all
