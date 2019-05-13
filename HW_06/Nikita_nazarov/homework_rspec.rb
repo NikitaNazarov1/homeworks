@@ -8,17 +8,17 @@ RSpec.describe Homework do
   let(:pull_r) { 'pull_r' }
 
   describe 'code' do
-    it 'return code' do
+    it ' code match?' do
       expect(subject.code).to eq code
     end
   end
   describe 'student fullname' do
-    it 'return student fullname' do
+    it 'student fullname match?' do
       expect(subject.student).to eq student
     end
   end
   describe 'pull request title' do
-    it 'return pull request title' do
+    it ' pull request title match?' do
       expect(subject.pull_r).to eq pull_r
     end
   end

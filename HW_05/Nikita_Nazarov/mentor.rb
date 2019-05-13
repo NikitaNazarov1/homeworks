@@ -15,8 +15,8 @@ class Mentor < Human
     if subscribes.to_s.include?(student.fullname)
       puts 'already subscribe'
     else
-      subscribes << student
       student.subscriber(self)
+      subscribes << student
     end
   end
 

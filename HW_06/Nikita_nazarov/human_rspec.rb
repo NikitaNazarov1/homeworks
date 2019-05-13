@@ -6,7 +6,7 @@ RSpec.describe Human do
   let(:fullname) { 'Full name' }
 
   describe 'fullname' do
-    it 'return fullname' do
+    it 'fullname  match?' do
       expect(subject.fullname).to eq fullname
     end
   end

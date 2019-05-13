@@ -8,17 +8,17 @@ RSpec.describe Notification do
   let(:pull_r) { 'pull_r' }
 
   describe ' status' do
-    it 'return status' do
+    it 'status match?' do
       expect(subject.status).to eq status
     end
   end
   describe 'student fullname' do
-    it 'return student fullname' do
+    it 'student match?' do
       expect(subject.student).to eq student
     end
   end
   describe ' pull request title' do
-    it 'return pull request title' do
+    it 'pull request match?' do
       expect(subject.pull_r).to eq pull_r
     end
   end

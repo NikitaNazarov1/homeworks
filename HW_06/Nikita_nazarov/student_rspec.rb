@@ -15,7 +15,7 @@ RSpec.describe Student do
   let(:pull_r) { 'pull request title' }
 
   describe ' student fullname' do
-    it 'return student fullname' do
+    it 'student fullname match?' do
       expect(subject.fullname).to eq fullname
     end
   end
